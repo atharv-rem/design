@@ -1,10 +1,35 @@
-import Footer from './footer.jsx';
+import Footer from '../components/footer.jsx';
+export const meta = () => [
+  { title: "Terms | Design Index" },
+  {
+    name: "description",
+    content:"Terms and Conditions",
+  },
+  { property: "og:title", content: "Terms | Design Index" },
+  {
+    property: "og:description",
+    content:"Terms and Conditions",
+  },
+  { property: "og:type", content: "website" },
+  { property: "og:image", content: "https://designindex.xyz/preview.avif" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Terms | Design Index" },
+  {
+    name: "twitter:description",
+    content:
+      "why i built design index",
+  },
+  {
+    name: "twitter:image",
+    content: "https://designindex.xyz/twitter_preview.avif",
+  },
+];
 
 export default function Terms_and_Conditions() {
     return (
         <>
-            <div className="flex flex-col items-start justify-center w-auto h-auto bg-white ml-[12px] mr-[20px] pt-[20px] md:pt-0">
-                <p className="text-[32px] md:text-[32px] lg:text-[34px] xl:text-[45px] 2xl:text-[50px] font-Outfit font-bold mb-[5px]">Terms and Conditions</p>
+            <div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px] p-[5px] flex flex-col items-start justify-center w-auto h-auto bg-white ml-[12px] mr-[20px]">
+                <p className="font-semibold text-[32px] md:text-[32px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] font-Outfit">terms and conditions</p>
                 <p className="text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[25px] font-Outfit font-semibold text-justify text-[#525252] mb-2">
                     Effective Date: July 20, 2025
                 </p>

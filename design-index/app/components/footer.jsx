@@ -5,25 +5,25 @@ import arrow from '../assets/arrrow.png';
 import twitter from '../assets/XLogo.png'
 import insta from '../assets/InstagramLogo.png';
 import linkedin from "../assets/LinkedinLogo.avif"
-import {useNavigate} from "react-router-dom"
+import {useNavigate,Link} from "react-router"
 
 export default function Footer() {
     const navigate = useNavigate();
     const connect = [
         { 
             name: "share", 
-            path: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out design index, a collection of the best design resources on the internet! https://designindex.xyz")}` 
+            path: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out design index, a collection of the best design resources on the internet! https://designindex.xyz")}`,
+            external: true
         },
-        { name: "feedback", path: "/feedback" },
-        { name: "submit a tool", path: "/Submit-a-Tool" },
-    ]
-
+        { name: "feedback", path: "/feedback", external: false },
+        { name: "submit a tool", path: "/Submit-a-Tool", external: false },
+    ];
 
     const info = [
-        { name: "about", path: "/About" },
-        { name: "privacy", path: "/Privacy-Policy" },
-        { name: "terms", path: "/Terms-and-Conditions" },
-    ]
+        { name: "about", path: "/about", external: false },
+        { name: "privacy", path: "/privacy-policy", external: false },
+        { name: "terms", path: "/terms-and-conditions", external: false },
+    ];
 
     return (
         <>
@@ -86,15 +86,11 @@ export default function Footer() {
                                 <span className="text-[17px] md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-black font-Outfit font-medium mb-[2px]">Info</span>
                                 <div className="flex flex-col items-start">
                                     {info.map((infoItem) => (
-                                        <div className='flex flex-row items-center justify-start w-auto h-auto' key={infoItem.name}>
-                                            <span
-                                                className="text-[17px] md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] font-Outfit font-medium text-[#898989] hover:text-black hover:cursor-pointer hover:underline-offset-2 hover:underline"
-                                                onClick={() => navigate(infoItem.path)}
-                                            >
-                                                {infoItem.name}
-                                            </span>
-                                            <img src={arrow} alt="arrow icon" className=" w-[12px] h-[12px]md:w-[13px] md:h-[13px] lg:w-[15px] lg:h-[15px] xl:w-[17px] xl:h-[17px] 2xl:w-[20px] 2xl:h-[20px] ml-[5px]" />
-                                        </div>
+                                        <Link key={infoItem.name} to={infoItem.path}
+                                            className="flex flex-row items-center justify-start text-[17px] md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] font-Outfit font-medium text-[#898989] hover:text-black hover:cursor-pointer hover:underline-offset-2 hover:underline">
+                                            {infoItem.name}
+                                            <img src={arrow} alt="arrow icon" className="w-[12px] h-[12px] md:w-[13px] md:h-[13px] lg:w-[15px] lg:h-[15px] xl:w-[17px] xl:h-[17px] 2xl:w-[20px] 2xl:h-[20px] ml-[5px]" />
+                                        </Link>
                                     ))}
                                 </div>
                             </div>

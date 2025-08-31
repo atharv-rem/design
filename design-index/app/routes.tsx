@@ -10,6 +10,11 @@ export default [
   layout("layout.jsx", [
     index("routes/index.jsx"),
     route("/tool/:tools", "routes/tool.$tools.jsx"),
+    route("/about", "routes/about.jsx"),
+    route("/privacy-policy", "routes/privacy-policy.jsx"),
+    route("/terms-and-conditions", "routes/terms.jsx"),
+    route("/submit-a-tool", "routes/submit-a-tool.jsx"),
+
     layout("routes/colours/layout.jsx", [
       index("routes/colours/index.jsx"),
       route("colours/:pricing", "routes/colours/$pricing.jsx"),

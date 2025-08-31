@@ -124,10 +124,10 @@ const should_disable_scroll = disable_scroll.some(path =>
             </div>
 
             {/* submit a tool button */}
-            <button className="w-full flex-grow px-[20px] bg-white border-[1.5px] border-[#e3e3e3] md:rounded-[13px] lg:rounded-[15px] xl:rounded-[20px] 2xl:rounded-[23px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out" onClick={() => {navigate("/Submit-a-Tool")}}>
+            <Link to="/submit-a-tool" className="w-full flex-grow px-[20px] bg-white border-[1.5px] border-[#e3e3e3] md:rounded-[13px] lg:rounded-[15px] xl:rounded-[20px] 2xl:rounded-[23px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
               <img src={send} alt="submit icon" className="w-[30px] h-[30px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px] mr-[2px]" />
               <span className="md:text-[20px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-Outfit font-semibold">submit a tool</span>
-            </button>
+            </Link>
           </div>
 
         </div>
@@ -182,10 +182,10 @@ const should_disable_scroll = disable_scroll.some(path =>
                 </div>
             </div>
 
-            <button className="w-[70vw] sm:w-[45vw] h-auto px-[20px] bg-white border-[1.5px] border-[#e3e3e3] p-[2px] flex flex-row items-center justify-center fixed bottom-[20px] left-[20px] sm:left-[20px] rounded-[18px]" onClick={() => {navigate("/Submit-a-Tool"); setSidebar(false);}}>
+            <Link to="/submit-a-tool" className="w-[70vw] sm:w-[45vw] h-auto px-[20px] bg-white border-[1.5px] border-[#e3e3e3] p-[2px] flex flex-row items-center justify-center fixed bottom-[20px] left-[20px] sm:left-[20px] rounded-[18px]" onClick={() => setSidebar(false)}>
                 <img src={send} alt="submit icon" className="w-[25px] h-[25px]" />
                 <span className="text-[25px] font-Outfit font-semibold ml-[10px]">submit a tool</span>
-            </button>
+            </Link>
         </div>
         )}
 

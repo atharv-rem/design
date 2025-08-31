@@ -5,6 +5,7 @@ import image4 from "../assets/IMG-20250723-WA0009_1.avif"
 import smiley from "../assets/smiley-in-love-solid.svg"
 import sidebar from "../assets/sidebar-left.svg"
 import scrollh from "../assets/arrows-scroll-h.svg"
+import Footer from "../components/footer.jsx"
 
 import useGlobalStore from "../zustand-global-storage";
 
@@ -228,6 +229,7 @@ export default function Homepage() {
         </a>
 
         <div className='w-full md:w-[78vw] flex flex-row z-4'>
+          <Footer />
         </div>
       </div>
     </div>
