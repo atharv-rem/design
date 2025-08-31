@@ -32,22 +32,22 @@ export default function App() {
       icon: mockup,
     },
     {
-      path: "/fonts",
+      path: "/fonts/index.jsx",
       label: "fonts",
       icon: font
     },
     {
-      path: "/design-inspirations",
+      path: "/design-inspirations/index.jsx",
       label: "inspirations",
       icon: design_inspo
     },
     {
-      path: "/icons",
+      path: "/icons/index.jsx",
       label: "icons",
       icon: icon
     },
     {
-      path: "/illustrations",
+      path: "/illustrations/index.jsx",
       label: "illustrations",
       icon: illustration
     },

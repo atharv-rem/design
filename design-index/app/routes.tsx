@@ -18,5 +18,9 @@ export default [
       index("routes/mockups/index.jsx"),
       route("mockups/:pricing", "routes/mockups/$pricing.jsx"),
     ]),
+    layout("routes/illustrations/layout.jsx",[
+      index("routes/illustrations/index.jsx"),
+      route("illustrations/:pricing", "routes/illustrations/$pricing.jsx"),
+    ])
   ]),
 ] satisfies RouteConfig;

@@ -6,7 +6,7 @@ export const meta = () => [
     name: "description",
     content:"Curated library of high-quality mockups to showcase your designs in real-world contexts",
   },
-  { property: "og:title", content: "Mockups | Design Directory" },
+  { property: "og:title", content: "Mockups | Design Index" },
   {
     property: "og:description",
     content:"Curated library of high-quality mockups to showcase your designs in real-world contexts",
@@ -14,7 +14,7 @@ export const meta = () => [
   { property: "og:type", content: "website" },
   { property: "og:image", content: "https://designindex.xyz/preview.avif" },
   { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Mockups | Design Directory" },
+  { name: "twitter:title", content: "Mockups | Design Index" },
   {
     name: "twitter:description",
     content:

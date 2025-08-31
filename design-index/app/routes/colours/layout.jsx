@@ -7,7 +7,7 @@ export const meta = () => [
     content:
       "Curated colour palettes, gradients and backgrounds to inspire consistent, visually appealing design.",
   },
-  { property: "og:title", content: "Colours | Design Directory" },
+  { property: "og:title", content: "Colours | Design Index" },
   {
     property: "og:description",
     content:
@@ -16,7 +16,7 @@ export const meta = () => [
   { property: "og:type", content: "website" },
   { property: "og:image", content: "https://designindex.xyz/preview.avif" },
   { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Colours | Design Directory" },
+  { name: "twitter:title", content: "Colours | Design Index" },
   {
     name: "twitter:description",
     content:
