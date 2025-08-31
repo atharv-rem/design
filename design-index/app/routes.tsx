@@ -30,5 +30,9 @@ export default [
       index("routes/fonts/index.jsx"),
       route("fonts/:pricing", "routes/fonts/$pricing.jsx"),
     ]),
+    layout("routes/icons/layout.jsx", [
+      index("routes/icons/index.jsx"),
+      route("icons/:pricing", "routes/icons/$pricing.jsx"),
+    ]),
   ]),
 ] satisfies RouteConfig;
