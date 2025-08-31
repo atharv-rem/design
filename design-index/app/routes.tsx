@@ -25,6 +25,10 @@ export default [
     layout("routes/design-inspo/layout.jsx", [
       index("routes/design-inspo/index.jsx"),
       route("design-inspo/:pricing", "routes/design-inspo/$pricing.jsx"),
-    ])
+    ]),
+    layout("routes/fonts/layout.jsx", [
+      index("routes/fonts/index.jsx"),
+      route("fonts/:pricing", "routes/fonts/$pricing.jsx"),
+    ]),
   ]),
 ] satisfies RouteConfig;
