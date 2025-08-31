@@ -21,6 +21,10 @@ export default [
     layout("routes/illustrations/layout.jsx",[
       index("routes/illustrations/index.jsx"),
       route("illustrations/:pricing", "routes/illustrations/$pricing.jsx"),
+    ]),
+    layout("routes/design-inspo/layout.jsx", [
+      index("routes/design-inspo/index.jsx"),
+      route("design-inspo/:pricing", "routes/design-inspo/$pricing.jsx"),
     ])
   ]),
 ] satisfies RouteConfig;

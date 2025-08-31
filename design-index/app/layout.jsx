@@ -37,7 +37,7 @@ export default function App() {
       icon: font
     },
     {
-      path: "/design-inspirations/index.jsx",
+      path: "/design-inspo/index.jsx",
       label: "inspirations",
       icon: design_inspo
     },
@@ -57,7 +57,7 @@ export default function App() {
   "/colours",
   "/mockups",
   "/fonts",
-  "/design-inspirations",
+  "/design-inspo",
   "/icons",
   "/illustrations",
   "/submit-a-tool",
