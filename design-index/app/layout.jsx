@@ -27,7 +27,7 @@ export default function App() {
       icon: color,
     },
     {
-      path: "/mockups",
+      path: "/mockups/index.jsx",
       label: "mockups",
       icon: mockup,
     },

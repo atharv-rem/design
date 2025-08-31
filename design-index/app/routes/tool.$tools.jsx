@@ -1,5 +1,5 @@
 import data from "../database.json";
-import { useParams,useNavigate } from "react-router";
+import { useParams } from "react-router";
 import left_arrow from "../assets/ArrowLeft.png";
 import link_arrow from "../assets/link.svg";
 import share_icon from "../assets/share.svg";
@@ -36,7 +36,6 @@ export const meta = ({ params }) => {
 
 export default function ToolPage() {
   const { tools } = useParams();
-  const navigate = useNavigate();
 
   const selectedItem = data.find(
     (item) => item.tool_name.toLowerCase() === tools?.toLowerCase()
