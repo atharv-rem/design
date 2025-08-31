@@ -2,24 +2,24 @@ import { Link } from 'react-router';
 import data from '../database.json';
 
 
-export default function Grid({items}) {
+export default function Grid({items, category}) {
  let filtered = [];
   if (items === "free") {
     filtered = data.filter(
-      (item) => item.category === "colour" && item.pricing === "free"
+      (item) => item.category === category && item.pricing === "free"
     );
   } else if (items === "paid") {
     filtered = data.filter(
-      (item) => item.category === "colour" && item.pricing === "paid"
+      (item) => item.category === category && item.pricing === "paid"
     );
   } else if (items === "freemium") {
     filtered = data.filter(
-      (item) => item.category === "colour" && item.pricing === "free,paid"
+      (item) => item.category === category && item.pricing === "free,paid"
     );
   }
   else {
     filtered = data.filter(
-      (item) => item.category === "colour"
+      (item) => item.category === category
     );
   }
 

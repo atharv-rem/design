@@ -7,6 +7,6 @@ export default function Pricing() {
   
 
   return (
-    <Grid items={pricing} />
+    <Grid items={pricing} category="colour" />
   );
 }
