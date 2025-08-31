@@ -1,29 +1,28 @@
-import color from "../assets/color-card.svg"
-import font from "../assets/text-font-stroke-rounded.svg"
-import icon from "../assets/home-01-stroke-rounded.svg"
-import mockup from "../assets/hold-phone-stroke-rounded.svg"
-import design_inspo from "../assets/canvas-stroke-rounded.svg"
-import illustration from "../assets/ai-beautify-stroke-rounded.svg"
-import send from "../assets/submit.svg"
-import sidebar_icon from "../assets/sidebar icon.png"
-import sidebar_close_icon from "../assets/sidebar close.png"
-import india from '../assets/Indian flag.png';
-import heart from '../assets/love.png';
-import twitter from '../assets/XLogo.png'
-import insta from '../assets/InstagramLogo.png';
-import linkedin from "../assets/LinkedinLogo.avif"
-import warning from "../assets/octagon-warning.svg"
-import logo from "../assets/logo.avif"
+import color from "./assets/color-card.svg"
+import font from "./assets/text-font-stroke-rounded.svg"
+import icon from "./assets/home-01-stroke-rounded.svg"
+import mockup from "./assets/hold-phone-stroke-rounded.svg"
+import design_inspo from "./assets/canvas-stroke-rounded.svg"
+import illustration from "./assets/ai-beautify-stroke-rounded.svg"
+import send from "./assets/submit.svg"
+import sidebar_icon from "./assets/sidebar icon.png"
+import sidebar_close_icon from "./assets/sidebar close.png"
+import india from './assets/Indian flag.png';
+import heart from './assets/love.png';
+import twitter from './assets/XLogo.png'
+import insta from './assets/InstagramLogo.png';
+import linkedin from "./assets/LinkedinLogo.avif"
+import warning from "./assets/octagon-warning.svg"
+import logo from "./assets/logo.avif"
 
-import SearchBar from "../components/search bar.jsx";
-import {useNavigate,useLocation, Outlet} from "react-router";
-import useGlobalStore from "../zustand-global-storage.js"
+import SearchBar from "./components/search bar.jsx";
+import {Link,useLocation, Outlet} from "react-router";
+import useGlobalStore from "./zustand-global-storage.js"
 
 export default function App() {
-  const navigate = useNavigate();
   const navItems = [
     {
-      path: "/colours",
+      path: "/colours/index.jsx",
       label: "colours",
       icon: color,
     },
@@ -64,7 +63,10 @@ export default function App() {
   "/submit-a-tool",
   "/feedback",
 ];
-const should_disable_scroll = disable_scroll.includes(location.pathname);
+const should_disable_scroll = disable_scroll.some(path =>
+  location.pathname.startsWith(path)
+);
+
 
   // State to manage sidebar visibility
   const sidebar = useGlobalStore((state) => state.sidebar);
@@ -85,24 +87,24 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
         <div className="sm:hidden xs:hidden hidden md:block flex-col items-center justify-center w-1/5 bg-white min-h-screen max-h-screen position-fixed top-0 left-0 relative">
           
           {/* logo and title */}
-          <div className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] 2xl:pl-4 2xl:pt-3 w-full cursor-pointer" onClick={() => navigate("/")}>
+          <Link to="/" className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] 2xl:pl-4 2xl:pt-3 w-full cursor-pointer">
             <img alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] md:w-[25px] md:h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] ml-[10px] rotate-[5deg]"/>
             <span className="text-[22px] md:text-[22px] lg:text-[28px] xl:text-[33px] 2xl:text-[38px] pl-2 font-Fustat font-semibold">design index.</span>                    
-          </div>
+          </Link>
 
           {/* Navigation bar */}
           <div className="flex flex-col gap-1 items-start justify-start w-auto h-full mt-[17px] xl:mt-[20px] mr-[5px] mb-[10px] ml-[5px] xl:ml-[10px] 2xl:ml-5 overflow-y-auto hide-scrollbar">
               
               {navItems.map(({ path, label, icon }) => (
-              <div
+              <Link
                 key={path}
                 className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[10px] p-[3px]"
-                onClick={() => navigate(path)}
+                to={path}
               >
                 <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] xl:p-[6px] border-[1.5px] border-[#EBEBEB] rounded-[8px]"/>
                 <span className="ml-[10px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[20px] lg:text-[25px] xl:text-[31px] 2xl:text-[38px]">{label}</span>
                 {location.pathname === path}
-              </div>
+              </Link>
             ))}
 
           </div> 
@@ -136,26 +138,24 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
 
             <div className="flex flex-col w-full h-auto p-[10px]">
               <div className="flex flex-row items-center justify-between mb-4 w-auto h-auto">
-                <div onClick={() => {navigate("/"); setSidebar(false);}} className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
+                <Link to="/" onClick={() => setSidebar(false)} className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
                   <img src={logo} alt="design index logo" className="w-[30px] h-[30px] rotate-[5deg]" />
                   <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px] items-center justify-start">design index.</span>
-                </div>
+                </Link>
                 <img onClick={() => setSidebar(false)} src={sidebar_close_icon} alt="close sidebar" className="w-[36px] h-[36px] p-[5px]"/>
               </div>
 
               <div className="flex flex-col items-start justify-start w-full h-auto overflow-y-auto hide-scrollbar">
                 {navItems.map(({ path, label, icon }) => (
-                  <div
+                  <Link
                     key={path}
+                    to={path}
                     className="flex items-center gap-[10px] cursor-pointer hover:bg-gray-100 p-2 rounded-md"
-                    onClick={() => {
-                      navigate(path);
-                      setSidebar(false);
-                    }}
+                    onClick={() => setSidebar(false)}
                   >
                     <img src={icon} alt={label} className="w-[35px] h-[35px] border-[1.5px] border-[#EBEBEB] rounded-[8px] p-[5px]" />
                     <span className="text-[25px] font-Outfit font-semibold text-black ">{label}</span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
