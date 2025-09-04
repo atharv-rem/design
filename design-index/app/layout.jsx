@@ -74,6 +74,7 @@ const should_disable_scroll = disable_scroll.some(path =>
   const toggleSidebar = useGlobalStore((state) => state.toggleSidebar);
 
   const handleToggleSidebar = () => {
+    console.log('Sidebar toggle function called!')
     toggleSidebar();
   };
   
@@ -100,6 +101,8 @@ const should_disable_scroll = disable_scroll.some(path =>
                 key={path}
                 className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[10px] p-[3px]"
                 to={path}
+                reloadDocument
+                viewTransition
               >
                 <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] xl:p-[6px] border-[1.5px] border-[#EBEBEB] rounded-[8px]"/>
                 <span className="ml-[10px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[20px] lg:text-[25px] xl:text-[31px] 2xl:text-[38px]">{label}</span>
@@ -138,7 +141,7 @@ const should_disable_scroll = disable_scroll.some(path =>
 
             <div className="flex flex-col w-full h-auto p-[10px]">
               <div className="flex flex-row items-center justify-between mb-4 w-auto h-auto">
-                <Link to="/" onClick={() => setSidebar(false)} className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
+                <Link prefetch="viewport" to="/" onClick={() => setSidebar(false)} className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
                   <img src={logo} alt="design index logo" className="w-[30px] h-[30px] rotate-[5deg]" />
                   <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px] items-center justify-start">design index.</span>
                 </Link>
@@ -150,6 +153,8 @@ const should_disable_scroll = disable_scroll.some(path =>
                   <Link
                     key={path}
                     to={path}
+                    prefetch="viewport"
+                    reloadDocument
                     className="flex items-center gap-[10px] cursor-pointer hover:bg-gray-100 p-2 rounded-md"
                     onClick={() => setSidebar(false)}
                   >
@@ -200,7 +205,7 @@ const should_disable_scroll = disable_scroll.some(path =>
           </div>
 
           {/* Sidebar icon for mobile */}
-          <img onClick={handleToggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-5 bg-white" />
+          <img onClick={handleToggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-10 bg-white" />
 
           <SearchBar />
           {/* Conditional rendering based on selected page */}
