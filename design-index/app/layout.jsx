@@ -18,6 +18,7 @@ import logo from "./assets/logo.avif"
 import SearchBar from "./components/search bar.jsx";
 import {Link,useLocation, Outlet} from "react-router";
 import useGlobalStore from "./zustand-global-storage.js"
+import {useState, useEffect} from "react"
 
 export default function App() {
   const navItems = [
@@ -72,12 +73,16 @@ const should_disable_scroll = disable_scroll.some(path =>
   const sidebar = useGlobalStore((state) => state.sidebar);
   const setSidebar = useGlobalStore((state) => state.setSidebar);
   const toggleSidebar = useGlobalStore((state) => state.toggleSidebar);
+  const [isMounted, setIsMounted] = useState(false)
 
   const handleToggleSidebar = () => {
     console.log('Sidebar toggle function called!')
     toggleSidebar();
   };
-  
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <>
@@ -136,7 +141,7 @@ const should_disable_scroll = disable_scroll.some(path =>
         </div>
 
         {/* Mobile sidebar for navigation */}
-        {sidebar && (
+        {isMounted && sidebar && (
           <div className="md:hidden fixed top-0 left-0 w-[80%] sm:w-[50%] h-screen bg-white z-50 shadow-lg justify-center items-end">
 
             <div className="flex flex-col w-full h-auto p-[10px]">
