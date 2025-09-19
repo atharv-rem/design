@@ -62,9 +62,9 @@ export default function ToolPage() {
       </div>
 
       <div className='flex flex-col sm:flex-row items-start justify-start mt-[10px]'>
-        <img src={selectedItem.og_image_link} alt="og image" className=' h-auto w-full sm:h-[180px] sm:w-[320px] md:h-[180px] md:w-[340px] lg:h-[200px] lg:w-[360px] xl:h-[240px] xl:w-[440px] 2xl:h-[280px] 2xl:w-[520px] rounded-[20px] md:rounded-[20px] lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[40px]'/>
+        <img src={selectedItem.og_image_link} alt="og image" className=' h-auto w-full sm:h-[180px] sm:w-[320px] md:h-[180px] md:w-[340px] lg:h-[200px] lg:w-[360px] xl:h-[240px] xl:w-[440px] 2xl:h-[280px] 2xl:w-[520px] rounded-[20px] md:rounded-[20px] lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[40px] border-white border-[5px] shadow-lg'/>
         <div className='flex flex-col items-start justify-start ml-0 sm:ml-[20px]'>
-        <span className='font-semibold text-[25px] md:text-[25px] lg:text-[30px] xl:text-[35px] 2xl:text-[40px] font-Outfit mt-[5px] '>{selectedItem.tool_name}</span>
+        <span className='font-semibold text-[25px] md:text-[25px] lg:text-[30px] xl:text-[35px] 2xl:text-[40px] font-Outfit mt-[10px]'>{selectedItem.tool_name}</span>
         {selectedItem.pricing.length > 5 ? (
         <div className='flex flex-row items-center justify-start'>
           <div className="font-Outfit font-semibold flex text-[15px] sm:text-[14px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] py-[5px] px-[5px] text-[#20851c] bg-[#d9ffd7] w-[45px] h-[25px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[3px] 2xl:mt-[8px]">free</div>

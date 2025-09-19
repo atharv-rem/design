@@ -26,21 +26,19 @@ export default function Grid({items, category}) {
   return (
     <>
     {filtered.length > 0 ? (
-    <div className="h-[80vh] overflow-auto grid grid-cols-1 sm:grid-cols-2 gap-[15px] mt-[10px] w-full pb-[120px] pt-[5px] hide-scrollbar items-start">
+    <div className="h-[80%] overflow-auto grid grid-cols-1 sm:grid-cols-4 gap-[28px] xl:gap-[20px] mt-[10px] w-full pb-[50px] pt-[5px] px-[5px] hide-scrollbar items-start">
         {filtered.map((item) =>
             item ? (
             <Link
             key={item.tool_name}
             to={`/tool/${item.tool_name.toLowerCase()}`}
-            className="bg-white rounded-[15px] lg:rounded-[20px] xl:rounded-[24px] justify-start items-center border-[1px] border-[#e1e1e1] flex flex-row hover:shadow-sm hover:translate-y-[-2px] transition-all duration-200 ease-in-out cursor-pointer"
-            >
-            <img
+            className="group bg-white rounded-[10px] lg:rounded-[20px] xl:rounded-[24px] justify-start items-center flex flex-col hover:shadow-md hover:translate-y-[-2px] hover:scale-102 transition-all duration-200 ease-in-out cursor-pointer">
+           <img
             alt={item.description.toLowerCase()}
             loading='lazy'
             src={item.og_image_link}
-            className="h-[110px] w-[190px] sm:h-[110px] sm:w-[200px] md:h-[130px] md:w-[240px] lg:h-[140px] lg:w-[240px] xl:w-[300px] xl:h-[160px] 2xl:w-[350px] 2xl:h-[195px] rounded-[10px] sm:rounded-[10px] md:rounded-[14px] lg:rounded-[14px] xl:rounded-[18px] flex-shrink-0 overflow-hidden ml-[7px] md:ml-[7px] lg:ml-[8px] xl:ml-[8px] 2xl:ml-[12px] mt-[5px] mb-[5px]"
-            />
-            <div className='flex flex-col justify-start items-start ml-[15px] mr-[12px] w-auto h-full mt-[10px]'>
+            className="rounded-t-[10px] lg:rounded-[20px] xl:rounded-[24px] w-full object-cover transition-transform duration-200 group-hover:scale-102 mb-[5px] relative aspect-[16/9]"/>
+            <div className='flex flex-col justify-start items-start mb-[10px] w-full h-full mt-[5px] px-[15px]'>
                 <div className="text-[14px] lg:text-[17px] xl:text-[19px] 2xl:text-[25px] text-black font-Outfit font-bold p-0 leading-4 xl:leading-5 mt-[5px] lg:mt-[8px] 2xl:mt-[15px]">{item.tool_name}</div>
 
                     {item.pricing.length > 5 ? (

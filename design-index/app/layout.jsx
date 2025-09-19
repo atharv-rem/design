@@ -82,19 +82,18 @@ const should_disable_scroll = disable_scroll.some(path =>
   return (
     <>
       {/* parent layout container */}
-      <div className="flex w-full h-screen p-[10px] overflow-hidden bg-white"> 
+      <div className="flex w-full h-screen overflow-hidden bg-white"> 
 
         {/* Left sidebar for navigation*/}
-        <div className="sm:hidden xs:hidden hidden md:block flex-col items-center justify-center w-1/5 bg-white min-h-screen max-h-screen position-fixed top-0 left-0 relative">
+        <div className="bg-white sm:hidden xs:hidden hidden md:block flex-col items-center justify-center w-[13%] min-h-screen max-h-screen position-fixed top-0 left-0 relative border-r-[1px] border-[#e1e1e1]">
           
           {/* logo and title */}
-          <Link to="/" className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] 2xl:pl-4 2xl:pt-3 w-full cursor-pointer">
-            <img alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] md:w-[25px] md:h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] ml-[10px] rotate-[5deg]"/>
-            <span className="text-[22px] md:text-[22px] lg:text-[28px] xl:text-[33px] 2xl:text-[38px] pl-2 font-Fustat font-semibold">design index.</span>                    
+          <Link to="/" className="flex flex-row items-center justify-start h-auto leading-none mt-[10px] py-[5px] px-[2px] 2xl:pl-4 2xl:pt-3 w-full cursor-pointer">
+            <img alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] md:size-[20px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] ml-[10px] rotate-[5deg]"/>                    
           </Link>
 
           {/* Navigation bar */}
-          <div className="flex flex-col gap-1 items-start justify-start w-auto h-full mt-[17px] xl:mt-[20px] mr-[5px] mb-[10px] ml-[5px] xl:ml-[10px] 2xl:ml-5 overflow-y-auto hide-scrollbar">
+          <div className="flex flex-col gap-1 items-start justify-start w-auto h-full mt-[8px] xl:mt-[20px] mr-[5px] mb-[10px] ml-[5px] xl:ml-[10px] 2xl:ml-5 overflow-y-auto hide-scrollbar">
               
               {navItems.map(({ path, label, icon }) => (
               <Link
@@ -104,8 +103,8 @@ const should_disable_scroll = disable_scroll.some(path =>
                 reloadDocument
                 viewTransition
               >
-                <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] xl:p-[6px] border-[1.5px] border-[#EBEBEB] rounded-[8px]"/>
-                <span className="ml-[10px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[20px] lg:text-[25px] xl:text-[31px] 2xl:text-[38px]">{label}</span>
+                <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:size-[23px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] md:p-[3px] xl:p-[6px] rounded-[7px]"/>
+                <span className="ml-[5px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[15px] lg:text-[25px] xl:text-[31px] 2xl:text-[38px] text-[#333333]">{label}</span>
                 {location.pathname === path}
               </Link>
             ))}
@@ -113,23 +112,11 @@ const should_disable_scroll = disable_scroll.some(path =>
           </div> 
 
           {/* Bottom section with illustration and submit button */}
-          <div className="items-start justify-start absolute bottom-[20px] left-[20px] md:bottom-[30px] md:left-[0px] md-right-[0px] lg:bottom-[30px] xl:bottom-[40px] w-auto flex flex-col md:mx-[5px] lg:mx-[10px]">
-            
-            {/* warning text */}
-            <div className="flex flex-col items-start justify-center h-auto w-full flex-grow p-[10px] lg:px-[15px] lg:py-[15px] 2xl:px-[20px] 2xl:py-[20px] bg-white border-[1px] border-[#eaeaea] md:rounded-[15px] lg:rounded-[20px] xl:rounded-[25px] 2xl:rounded-[30px] mb-[10px]">
-              <div className="flex flex-row">
-                <img src={warning} alt="warning icon" className="md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px] xl:w-[28px] xl:h-[28px] 2xl:w-[33px] 2xl:h-[33px]"/>
-                <span className="md:text-[15px] lg:text-[20px] xl:text-[25px] 2xl:text-[30px] font-Outfit mb-[5px] ml-[5px] text-black font-semibold leading-none">warning!</span>
-              </div>             
-              <span className="md:text-[13px] lg:text-[18px] xl:text-[23px] 2xl:text-[25px] mt-[3px] font-Outfit text-[#6f6f6f] font-medium md:leading-[15px] lg:leading-5 xl:leading-6 2xl:leading-7">
-                no emails, no bullshi* we only offer the best design resources
-              </span>
-            </div>
-
+          <div className="items-start justify-start absolute bottom-[20px] left-[20px] md:bottom-[10px] md:left-[5px] md:right-[5px] lg:bottom-[30px] xl:bottom-[40px] w-auto flex flex-col md:mx-[5px] lg:mx-[10px]">
             {/* submit a tool button */}
-            <Link to="/submit-a-tool" className="w-full flex-grow px-[20px] bg-white border-[1.5px] border-[#e3e3e3] md:rounded-[13px] lg:rounded-[15px] xl:rounded-[20px] 2xl:rounded-[23px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
-              <img src={send} alt="submit icon" className="w-[30px] h-[30px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px] mr-[2px]" />
-              <span className="md:text-[20px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-Outfit font-semibold">submit a tool</span>
+            <Link to="/submit-a-tool" className="w-full flex-grow bg-white border-[1.5px] border-[#f0f0f0] md:rounded-[10px] lg:rounded-[15px] xl:rounded-[20px] 2xl:rounded-[23px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
+              <img src={send} alt="submit icon" className="size-[25px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px] mr-[2px]" />
+              <span className="md:text-[16px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-Outfit font-semibold">submit</span>
             </Link>
           </div>
 
@@ -181,9 +168,9 @@ const should_disable_scroll = disable_scroll.some(path =>
                   <img src={india} alt="indian flag" className="w-[15px] h-[10px]md:w-[17px] md:h-[12px] lg:w-[19px] lg:h-[14px] xl:w-[22px] xl:h-[16px] 2xl:w-[24px] 2xl:h-[18px] ml-[5px]" />
                 </div>
                 <div className='flex flex-row items-start justify-center mt-[5px]'>
-                  <img src={twitter} loading="lazy" alt="X logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] mr-[5px] p-[5px] border-[1px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://x.com/atharv_rem", "_blank")} />
-                  <img src={insta} loading="lazy" alt="Instagram logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] mr-[5px] p-[5px] border-[1px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://instagram.com/atharv_remeshan", "_blank")} />
-                  <img src={linkedin} loading="lazy" alt="LinkedIn logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px] border-[1px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://www.linkedin.com/in/atharv-rem", "_blank")} />
+                  <img src={twitter} loading="lazy" alt="X logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] mr-[5px] p-[5px]  shadow-sm border-[0.5px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://x.com/atharv_rem", "_blank")} />
+                  <img src={insta} loading="lazy" alt="Instagram logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] mr-[5px] p-[5px]  shadow-sm border-[0.5px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://instagram.com/atharv_remeshan", "_blank")} />
+                  <img src={linkedin} loading="lazy" alt="LinkedIn logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px]  shadow-sm border-[0.5px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://www.linkedin.com/in/atharv-rem", "_blank")} />
                 </div>
             </div>
 
@@ -195,21 +182,25 @@ const should_disable_scroll = disable_scroll.some(path =>
         )}
 
         {/* right content area*/}
-        <div key={location.pathname} className={`flex-col items-center justify-center w-full md:w-4/5 p-[5px] md:p-[5px] bg-white z-4 
-        ${should_disable_scroll ? "overflow-hidden": "overflow-y-auto hide-scrollbar"}`}>
-
-          {/* Mobile header */}
-          <div className="md:hidden flex flex-row items-start justify-start w-full h-[100px] mb-[5px] fixed top-0 pt-[20px] left-[5px] z-5 p-[10px] bg-white">
-            <img src={logo} alt="design index logo" className="w-[30px] h-[30px rotate-[5deg]" />
-            <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
+        <div className="flex-col items-center justify-center w-full md:w-[87%] p-[5px] md:p-[5px] md:px-[20px] bg-white">
+          <div className="flex flex-row w-full">
+            <SearchBar />
+            <div className="flex flex-row items-center justify-start w-auto h-auto font-Outfit text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[24px] px-[20px]">blog</div>
+            <div className="flex flex-row items-center justify-start w-auto h-auto font-Outfit text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[24px] px-[20px]">about</div>
           </div>
+          <div key={location.pathname} className={`h-full ${should_disable_scroll ? "overflow-hidden": "overflow-y-auto hide-scrollbar"}`}>
 
-          {/* Sidebar icon for mobile */}
-          <img onClick={handleToggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-10 bg-white" />
+            {/* Mobile header */}
+            <div className="md:hidden flex flex-row items-start justify-start w-full h-[100px] mb-[5px] fixed top-0 pt-[20px] left-[5px] z-5 p-[10px] bg-white">
+              <img src={logo} alt="design index logo" className="w-[30px] h-[30px rotate-[5deg]" />
+              <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
+            </div>
 
-          <SearchBar />
-          {/* Conditional rendering based on selected page */}
-          <Outlet />
+            {/* Sidebar icon for mobile */}
+            <img onClick={handleToggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-10 bg-white" />
+            {/* Conditional rendering based on selected page */}
+            <Outlet />
+          </div>
         </div>
         
       </div>

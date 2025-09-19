@@ -29,19 +29,19 @@ export default function Homepage() {
     <>
     <div className="flex flex-col items-center justify-center w-full h-auto bg-white">
       {/* Hero Section */}
-      <div className="flex flex-col items-start sm:items-center justify-center w-full h-[100dvh] bg-white sticky top-0">
+      <div className="flex flex-col items-start justify-center w-full h-[100dvh] bg-white sticky top-0">
         {/* Desktop Version */}
         <a href="https://peerlist.io/atharv_rem/project/design-index" target="_blank" rel="noopener noreferrer">
           <div className="w-auto px-[10px] py-[5px] border-[1px] border-[#e2e2e2] shadow-sm rounded-[13px]  sm:rounded-[16px] cursor-pointer hover:translate-y-[-5px] transition-transform duration-300">
             <p className="text-center text-[15px] sm:text-[18px] font-Outfit font-medium text-black">#18 on <strong className="text-[#00aa45]">Peerlist</strong></p>
           </div>
         </a>
-        <div className="hidden w-full sm:flex flex-col items-start sm:items-center sm:text-center">
+        <div className="hidden w-full sm:flex flex-col items-start">
           <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-CalSans mb-[5px]">
-            Collection of the best
+            Best design resources
           </p>
           <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-CalSans mb-[10px] mt-0 leading-[10px] md:leading-[20px] 2xl:leading-[35px]">
-            design resources
+            on the internet
           </p>
         </div>
         
@@ -59,28 +59,17 @@ export default function Homepage() {
         </div>
 
 
-        <div 
-          className="w-full flex flex-col items-center justify-center text-left mt-[10px] sm:mt-[30px] sm:hidden"
-        >
-          <p 
-            style={{
-              fontFamily: "'Outfit', sans-serif", 
-              fontWeight: 500,
-              fontSize: '20px', 
-              lineHeight: '1', 
-              color: '#4a4a4a',
-              maxWidth: '900px', 
-              marginRight: '10px', 
-            }}
-          >
+        <div className="w-full flex flex-col items-center justify-center text-left mt-[10px] sm:mt-[30px] sm:hidden">
+          <p style={{fontFamily: "'Outfit', sans-serif", fontWeight: 500, fontSize: '20px', lineHeight: '1', color: '#4a4a4a', maxWidth: '900px', marginRight: '10px'}}>
             internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
 
 
-        <div className="hidden w-full sm:flex items-start sm:items-center flex-col justify-center sm:text-center mt-[10px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] sm:leading-7 xl:leading-8 sm:px-[100px] lg:px-[200px] xl:px-[250px] 2xl:px-[300px]">
-          <p className="sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#4a4a4a]">
-            internet's handpicked design resources, we don’t compromise on quality
+        <div className="hidden w-full sm:flex items-start flex-col justify-center mt-[10px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] sm:leading-7 xl:leading-8 sm:pr-[100px] lg:pr-[200px] xl:pr-[250px] 2xl:pr-[300px]">
+          <p className="flex flex-col sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#4a4a4a]">
+            <span>internet's handpicked design resources,</span> 
+            <span>we don’t compromise on quality</span>
           </p>
         </div>
         
@@ -153,18 +142,20 @@ export default function Homepage() {
 
       {/* 200+ tools Section */}
       <div className="w-full flex flex-col items-center justify-center text-center bg-white z-4 overflow-hidden">
-        <div className="w-auto flex flex-col items-center justify-center text-center pt-[40px] xs:pt-[50px] bg-white flex-grow">
-          <p className="border-[1px] rounded-2xl shadow-md border-[#efefef] px-[20px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px]  font-CalSans text-black">
-            200+ tools
-          </p>
-          <p className="mt-[10px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px]  font-CalSans text-black text-wrap">
-            across 6 categories
-          </p>
-          <p className="hidden md:flex-row md:flex mb-[10px] mt-[5px] ">
-            <img src={sidebar} alt="sidebar icon" className="inline-block mr-[8px] h-[18px] w-[18px] xs:w-[22px] xs:h-[22px] sm:w-[25px] sm:h-[25px] " />
-            <span className="font-semibold font-Outfit">take a peek at the sidebar on the left for all categories</span>
-          </p>
-          <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium text-justify font-Outfit text-[#4a4a4a] leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[10px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] px-[40px] xs:px-[40px] sm:px-[10px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
+        <div className="w-auto flex flex-col sm:flex-row items-center sm:items-center justify-center text-center sm:text-left pt-[40px] xs:pt-[50px] bg-white flex-grow">
+          <div className="flex flex-col sm:w-[30%] pr-[50px]">
+            <p className="w-auto border-[1px] rounded-2xl shadow-md border-[#efefef] px-[20px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px]  font-CalSans text-black">
+              200+ tools
+            </p>
+            <p className="mt-[10px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px]  font-CalSans text-black text-wrap">
+              across 6 categories
+            </p>
+            <p className="hidden md:flex-row md:flex mb-[10px] mt-[5px] ">
+              <img src={sidebar} alt="sidebar icon" className="inline-block mr-[8px] h-[18px] w-[18px] xs:w-[22px] xs:h-[22px] sm:w-[25px] sm:h-[25px] " />
+              <span className="font-semibold font-Outfit">take a peek at the sidebar on the left for all categories</span>
+            </p>
+          </div>
+          <p className="sm:w-[70%] text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium text-justify font-Outfit text-[#4a4a4a] leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[10px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px]">
             At Design Index, every tool is handpicked to ensure it adds real value to designers and creators. Rather than listing countless options, the focus is on curating only the most reliable and effective tools. This quality-over-quantity approach makes us a trusted resource for discovering the best in design and creativity.
           </p>
           <button onClick={() => setSidebar(true)} className="mt-[30px] mb-[40px] items-center justify-center flex flex-row md:hidden rounded-[13px] xs:rounded-[15px] sm:rounded-[20px] shadow-md  px-[12px] xs:px-[15px] py-[5px] text-[20px] xs:text-[25px] sm:text-[30px] md:text-[25px] lg:text-[30px] xl:text-[35px] 2xl:text-[40px] font-semibold font-Outfit text-white bg-black">

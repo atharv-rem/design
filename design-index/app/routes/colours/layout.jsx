@@ -32,8 +32,8 @@ function Colours() {
   return (
     <>
           {/* title section */}
-          <div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px] flex flex-col items-start justify-center h-auto w-full sm:w-auto p-[5px]">
-            <span className="font-semibold text-[32px] md:text-[32px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] font-Outfit">colours</span>
+          <div className="mt-[90px] md:mt-0 flex flex-col items-start justify-center w-full sm:w-auto p-[5px]">
+            <span className="font-semibold text-[32px] md:text-[28px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] font-Outfit">colours</span>
             <p className=" hidden sm:block text-[15px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[25px] font-Outfit font-medium mr-[12px] leading-4 md:leading-4 lg:leading-5 xl:leading-6 2xl:leading-7 text-justify">
               A curated collection of colour palettes, hues, gradients and backgrounds to inspire and streamline your design process.
               From bold primaries to subtle pastels, this section offers a versatile range of colour resources to help you build consistent,

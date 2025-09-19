@@ -29,7 +29,7 @@ export default function About() {
 
     return (
         <>
-            <div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px] flex flex-col items-start justify-center w-auto h-auto bg-white ml-[12px] mr-[20px] p-[5px]">
+            <div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px] flex flex-col items-start justify-center w-auto h-auto bg-white md:ml-[12px] md:mr-[20px] md:p-[5px]">
                 <p className="font-semibold text-[32px] md:text-[32px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] font-Outfit">about me</p>
                 <p className="text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[25px] font-Outfit font-semibold text-justify text-[#525252] mb-2">
                     Hi, I’m Atharv Remeshan, a designer and developer based in Mumbai, India. I created this website to help fellow designers find the best design resources available on the internet.
@@ -58,7 +58,7 @@ export default function About() {
                     ~ Atharv Remeshan
                 </p>
             </div>
-            <div className='ml-[12px]'>
+            <div className='md:ml-[12px]'>
                 <Footer />
             </div>
         </>
