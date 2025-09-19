@@ -14,6 +14,7 @@ export default [
     route("/privacy-policy", "routes/privacy-policy.jsx"),
     route("/terms-and-conditions", "routes/terms.jsx"),
     route("/submit-a-tool", "routes/submit-a-tool.jsx"),
+    route("/search","routes/search_suggestions.jsx"),
 
     layout("routes/colours/layout.jsx", [
       index("routes/colours/index.jsx"),

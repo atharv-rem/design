@@ -20,7 +20,7 @@ function SearchBar() {
 
   const navigate = useNavigate();
   const handleSearchImage = () => {
-    navigate("/Search");
+    navigate("/search");
   };
 
 
@@ -111,7 +111,6 @@ function SearchBar() {
             } 
           }}
           onClick={handleSearchImage}
-          onFocus={handleSearchImage}
 
           className="w-full overflow-hidden resize-none font-Outfit font-semibold text-black text-[16px] md:text-[15px] lg:text-[18px] xl:text-[20px] 2xl:text-[24px] placeholder:text-[#737373] placeholder:font-medium placeholder:tracking-normal ml-2 mr-2 outline-none bg-transparent leading-tight"
           rows={1}
