@@ -1,13 +1,12 @@
 import data from "../database.json";
 import Zustand_global_storage from "../zustand-global-storage.js";
-import arrow_down from "../assets/ArrowElbowRightDown.png"
 import { useState } from "react";
 import {Link} from "react-router";
 
 function Cards(items){
     return(
         <>
-        <div className="grid grid-cols-1 sm:hidden gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
+        <div className="grid grid-cols-1 sm:hidden gap-[10px] items-start justify-center w-auto mt-[10px] ml-[5px] mr-[5px]">
             {items.map((item, index) => (
                 <Link
                     key={index}
@@ -35,9 +34,9 @@ function Cards(items){
             ))}
         </div>
         <div className="pb-[50px] hidden overflow-auto sm:grid sm:grid-cols-4 gap-[28px] xl:gap-[20px] mt-[10px] w-full pt-[5px] px-[5px] hide-scrollbar items-start">
-            {items.map((item) => (
+            {items.map((item, index) => (
                 <Link
-                    key={item.tool_name}
+                    key={index}
                     to={`/tool/${item.tool_name.toLowerCase()}`}
                     className="group bg-white rounded-[10px] lg:rounded-[20px] xl:rounded-[24px] justify-start items-center flex flex-col hover:shadow-md hover:translate-y-[-2px] hover:scale-102 transition-all duration-200 ease-in-out cursor-pointer">
                 <img
@@ -92,8 +91,8 @@ export default function Searchresults() {
             if (results.every(r => r.matchedKeywords <= 1)) {
                 return(
                     <>
-                        <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[10px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[65px] font-Outfit text-black font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[20px] xl:text-[22px] 2xl:text-[26px] ml-[5px]">relevant results</div>
-                        <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[24px] mb-[10px]">{similar_results_count} tools</div>
+                        <div className="flex flex-col items-start justify-center h-auto md:mt-[10px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[65px] font-Outfit text-black font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[20px] xl:text-[22px] 2xl:text-[26px] ml-[10px]">relevant results</div>
+                        <div className="flex flex-col items-start justify-center h-auto ml-[10px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[24px] mb-[10px]">{similar_results_count} tools</div>
                         {Cards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords === 1)))}
                     </>
                 )
@@ -127,17 +126,18 @@ export default function Searchresults() {
 
                 const similar_results_count = similar_results.length;
                 return (
-                <>
-                    <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[10px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[65px] font-Outfit text-black font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[20px] xl:text-[22px] 2xl:text-[26px] ml-[5px]">relevant results</div>
-                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[24px] mb-[10px]">{relevant_results.length} tools</div>
-                    {Cards(relevant_results)}
-                    
-                    <div className="flex flex-row items-center justify-start h-auto md:mt-[20px] ml-[5px] cursor-pointer" onClick={handle_similar_results_click}>
-                        <span className="font-Outfit text-black font-semibold text-[15px]text-[15px] sm:text-[17px] md:text-[15px] lg:text-[20px] xl:text-[22px] 2xl:text-[26px]">similar results</span>
-                        <img src={arrow_down} alt="arrow down" className="w-[15px] h-[15px] sm:w-[17px] sm:h-[17px] md:w-[19px] md:h-[19px] xl:w-[22px] xl:h-[22px] 2xl:w-[28px] 2xl:h-[28px] ml-[2px]" />
+                <>  
+                <div className="flex flex-row mt-[10px] md:mt-[15px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[65px]">
+                    <div className="flex flex-col ml-[10px] md:ml-0">
+                        <div onClick={handle_similar_results_click} className="flex flex-col items-start justify-center h-auto font-Outfit text-black font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[20px] xl:text-[22px] 2xl:text-[26px] bg-[#f2f2f2] rounded-[5px] px-[10px] cursor-pointer">relevant results</div>
+                        <div className="mt-[5px] flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[24px]">{relevant_results.length} tools</div>
                     </div>
-                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px]text-[15px] sm:text-[17px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[24px] pb-[50px] mb-[10px]">{similar_results_count} tools</div>
-                    {click && Cards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords < max_match_count )))}
+                    <div className="flex flex-col ml-[10px]">
+                        <div onClick={handle_similar_results_click} className="font-Outfit text-black font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[20px] xl:text-[22px] 2xl:text-[26px] bg-[#f2f2f2] rounded-[5px] px-[10px] cursor-pointer">similar results</div>
+                        <div className="mt-[5px] flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[24px]">{similar_results_count} tools</div>
+                    </div>
+                </div>
+                    {click ? (Cards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords < max_match_count )))) : (Cards(relevant_results))}
                 </>
                 );
                 })();

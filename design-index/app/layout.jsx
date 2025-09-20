@@ -12,7 +12,6 @@ import heart from './assets/love.png';
 import twitter from './assets/XLogo.png'
 import insta from './assets/InstagramLogo.png';
 import linkedin from "./assets/LinkedinLogo.avif"
-import warning from "./assets/octagon-warning.svg"
 import logo from "./assets/logo.avif"
 
 import SearchBar from "./components/search bar.jsx";

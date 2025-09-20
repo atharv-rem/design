@@ -16,6 +16,7 @@ export default [
     route("/submit-a-tool", "routes/submit-a-tool.jsx"),
     route("/search","routes/search_suggestions.jsx"),
     route("/search_results","routes/search_results.jsx"),
+    route("/feedback","routes/feedback.jsx"),
 
     layout("routes/colours/layout.jsx", [
       index("routes/colours/index.jsx"),
