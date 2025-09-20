@@ -15,6 +15,7 @@ export default [
     route("/terms-and-conditions", "routes/terms.jsx"),
     route("/submit-a-tool", "routes/submit-a-tool.jsx"),
     route("/search","routes/search_suggestions.jsx"),
+    route("/search_results","routes/search_results.jsx"),
 
     layout("routes/colours/layout.jsx", [
       index("routes/colours/index.jsx"),

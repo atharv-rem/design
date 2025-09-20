@@ -81,7 +81,7 @@ function SearchBar() {
         setResults(sortedResults);
         console.log("Sorted results:", sortedResults);
         if (sortedResults.length >= 0) { 
-          navigate("/search-results"); 
+          navigate("/search_results"); 
           setLoading(false); // Stop loading when results are fetched
         }
     }
@@ -91,7 +91,7 @@ function SearchBar() {
 
   return (
     <>
-      <div className="h-[30px] flex flex-row items-center justify-start flex-grow flex-shrink w-[80%] bg-white border-[1px] border-[#f0f0f0] drop-shadow-sm drop-shadow-neutral-100 rounded-[10px] z-5 mt-[5px] p-[5px]">
+      <div className="h-[36px] sm:h-[30px] flex flex-row items-center justify-start flex-grow flex-shrink w-[70%] sm:w-[80%] bg-white border-[1px] border-[#f0f0f0] drop-shadow-sm drop-shadow-neutral-100 rounded-[10px] z-5 mt-0 md:mt-[5px] p-[5px]">
         <img src={search} alt="search icon" className="w-[22px] h-[22px] md:size-[18px] lg:w-[24px] lg:h-[24px] xl:w-[26px] xl:h-[26px] 2xl:w-[28px] 2xl:h-[28px] ml-2" />  
         <textarea
           inputMode="text"

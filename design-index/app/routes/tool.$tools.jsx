@@ -54,7 +54,7 @@ export default function ToolPage() {
   }
 
   return (
-    <div className='flex flex-col items-start justify-center h-auto mt-[100px] md:mt-[57px] lg:mt-[70px] xl:mt-[80px] 2xl:mt-[80px] p-[5px] w-auto'>
+    <div className='flex flex-col items-start justify-center h-auto mt-[5px] p-[5px] w-auto'>
       {/* Back button */}
       <div onClick={() => open_new_tool_window(null)} className='flex flex-row items-center justify-start cursor-pointer opacity-70 hover:opacity-100 hover:translate-x-[-2px] transition-all duration-200 ease-in-out'>
         <img src={left_arrow} alt='back arrow' className='w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[25px] lg:h-[25px] xl:w-[30px] xl:h-[30px] 2xl:w-[35px] 2xl:h-[35px]' />

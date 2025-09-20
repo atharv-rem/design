@@ -142,7 +142,7 @@ const should_disable_scroll = disable_scroll.some(path =>
                     to={path}
                     prefetch="viewport"
                     reloadDocument
-                    className="flex items-center gap-[10px] cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+                    className="flex items-center gap-[10px] w-full h-auto cursor-pointer hover:bg-gray-100 p-2 rounded-md"
                     onClick={() => setSidebar(false)}
                   >
                     <img src={icon} alt={label} className="w-[35px] h-[35px] border-[1.5px] border-[#EBEBEB] rounded-[8px] p-[5px]" />
@@ -183,21 +183,22 @@ const should_disable_scroll = disable_scroll.some(path =>
 
         {/* right content area*/}
         <div className="flex-col items-center justify-center w-full md:w-[87%] p-[5px] md:p-[5px] md:px-[20px] bg-white">
-          <div className="flex flex-row w-full">
+          <div className="flex-row w-full hidden md:flex">
             <SearchBar />
             <div className="flex flex-row items-center justify-start w-auto h-auto font-Outfit text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[24px] px-[20px]">blog</div>
             <div className="flex flex-row items-center justify-start w-auto h-auto font-Outfit text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[24px] px-[20px]">about</div>
           </div>
-          <div key={location.pathname} className={`h-full ${should_disable_scroll ? "overflow-hidden": "overflow-y-auto hide-scrollbar"}`}>
-
-            {/* Mobile header */}
-            <div className="md:hidden flex flex-row items-start justify-start w-full h-[100px] mb-[5px] fixed top-0 pt-[20px] left-[5px] z-5 p-[10px] bg-white">
+          
+          {/* Mobile header */}
+          <div className="md:hidden flex flex-col items-start justify-center w-full h-auto mb-[5px] pt-[10px] px-[5px] bg-white">
               <img src={logo} alt="design index logo" className="w-[30px] h-[30px rotate-[5deg]" />
-              <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
-            </div>
+              <div className="w-full h-auto flex flex-row items-center justify-center mt-[10px]">
+                <SearchBar />
+                <img onClick={handleToggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden size-[36px] ml-[10px]" />
+              </div>
+          </div>
 
-            {/* Sidebar icon for mobile */}
-            <img onClick={handleToggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-10 bg-white" />
+          <div key={location.pathname} className={`h-full ${should_disable_scroll ? "overflow-hidden": "overflow-y-auto hide-scrollbar"}`}>
             {/* Conditional rendering based on selected page */}
             <Outlet />
           </div>
